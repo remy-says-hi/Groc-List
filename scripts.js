@@ -1,11 +1,10 @@
 // business logic
 function transformGroceryList(arrayParameter) {
-  let newArray = [];
-  arrayParameter.forEach(function(groceryItem) {
+  const newArray = arrayParameter.map(function(groceryItem) {
     let charArray = groceryItem.split("");
     charArray[0] = groceryItem.charAt(0).toUpperCase();
-    newArray.push(charArray.join(""));
-  })
+    return charArray.join("");
+  });
   return newArray.sort();
 }
 
